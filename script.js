@@ -1,26 +1,35 @@
 let humanScore = 0
 let computerScore = 0
 function getComputerChoice() {
-    const computerChoice = Math.floor(Math.random() * 9)
-    console.log(computerChoice)
+    const computerOutput = Math.floor(Math.random() * 3)
+    console.log(computerOutput)
     const rock = "Rock"
     const paper = "paper"
     const scissor = "Scissor"
-    if (computerChoice <= 2) {
+    if (computerOutput === 0) {
         return rock
-    } else if (computerChoice > 2 && computerChoice <= 5) {
+    } else if (computerOutput === 1) {
         return paper
     } 
     return scissor
 }
-const computerOutput = getComputerChoice()
-console.log(computerOutput)
+const computerSelection = getComputerChoice()
+console.log(computerSelection)
 
 function getHumanChoice() {
-    const humanChoice = 
-        (prompt("Choose your weapon: Rock, Paper or Scissor")).toLowerCase()
-        
-
-    console.log(humanChoice)
+    return (prompt("Choose your weapon: Rock, Paper or Scissor")).toLowerCase()
+    
+    
 }
-getHumanChoice()
+const humanSelection = getHumanChoice()
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "Scissor") {
+        const result = `Computer Choise is: ${computerChoice}, You won!`
+        console.log(result)
+        humanScore++
+        
+    } 
+        
+}
+playRound(humanSelection, computerSelection)
