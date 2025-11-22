@@ -11,4 +11,14 @@ function getComputerChoice() {
     } 
     return scissor
 }
-console.log(getComputerChoice())
+const computerOutput = getComputerChoice()
+console.log(computerOutput)
+
+function getHumanChoice() {
+    const humanChoice = 
+        (prompt("Choose your weapon: Rock, Paper or Scissor")).toLowerCase()
+        
+
+    console.log(humanChoice)
+}
+getHumanChoice()
